@@ -93,7 +93,7 @@ function draw() {
     document.getElementById("background").style.transition = 'opacity 500ms'
   }
 
-if(window.height > closureHeight + 500) {
+if(window.height > closureHeight + 700) {
     document.getElementById("background").style.opacity = 1
     document.getElementById("background").style.transition = 'opacity 500ms'
   }

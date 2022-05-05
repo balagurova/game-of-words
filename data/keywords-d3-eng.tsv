@@ -1,11 +1,11 @@
 term	count	status
 Russia	1206	normal
-Russian	816	normal
+Russian	922	normal
 Ukraine	672	normal
 military	636	normal
-Ukrainian	468	normal
+Ukrainian	533	normal
 Donbass	423	normal
-special operation	387	normal
+special operation	419	normal
 Ministry of Defense	379	normal
 Putin	313	normal
 Mariupol	218	normal
@@ -31,6 +31,7 @@ Moscow	122	normal
 strength	112	normal
 city	109	show-more
 new	102	show-more
+refugees	101	show-more
 frames	95	show-more
 blows	89	show-more
 government	84	show-more
@@ -42,7 +43,6 @@ UN	74	show-more
 measures	70	show-more
 thousand	69	show-more
 programs	68	show-more
-refugees	67	show-more
 security forces	66	show-more
 Lavrov	65	show-more
 sides	65	show-more
