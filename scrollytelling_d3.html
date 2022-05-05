@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
+  <script src="./js/words.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game of Words</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="background"></div>
+  <div id="introduction">
+    <div class="titleBlock">
+
+      <img src="./img/title-3.gif" alt="Game of Words" width="700rem">
+
+      <h3 class="lead">A VISUAL ESSAY ABOUT THE INFORMATION MANIPULATION IN THE RUSSIAN NEWS</h3>
+    </div>
+
+  </div>
+
+
+
+
+
+  <br />
+  <div class="step">
+    <div class="left">Lorem ipsumnsectetur adipiscing elit. Eget nec feugiat sit imperdiet integer arcu sed. Auctor diam
+      augue fermentum a, donec. Lobortis volutpat sit velit pulvinar vitae at adipiscing imperdiet consectetur. Amet,
+      egestas quis nunc pulvinar nulla.
+      fermentum a, donec. Lobortis volutpat sit velit pulvinar vitae at adipiscing imperdiet consectetur. Amet, egestas
+      quis nunc pulvinar nulla. </div>
+
+    <div class="keywords"></div>
+  </div>
+
+  <div id="lane">
+    <div id="sticky">
+      <div class='words' width="400" height="800"></div>
+
+      <!-- <div class='box-title'></div> -->
+      <!-- <div class='box-text'></div> -->
+    </div>
+    <p id="start" class="par">
+      Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus,
+      tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+      massa justo sit amet risus. Fusce dapibus, tellus ac cursus commodo,
+      tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      Curabitur blandit tempus porttitor. Donec id elit non mi porta gravida
+      at eget metus. Morbi leo risus, porta ac consectetur ac, vestibulum at
+      eros. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+      auctor. Maecenas faucibus mollis interdum. Etiam porta sem malesuada
+      magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor
+      mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cum
+      sociis natoque penatibus et magnis dis parturient montes, nascetur
+      ridiculus mus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+      condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae
+      elit libero, a pharetra augue. Nulla vitae elit libero, a pharetra
+      augue. Cras mattis consectetur purus sit amet fermentum.
+    </p>
+    <p id="step1" class="par">
+      Russian|Ukraine
+      Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper
+      nulla non metus auctor fringilla. Duis mollis, est non commodo luctus,
+      nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed
+      odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce
+      dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+      fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus
+      commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+      amet risus. Curabitur blandit tempus porttitor. Donec id elit non mi
+      porta gravida at eget metus. Morbi leo risus, porta ac consectetur ac,
+      vestibulum at eros. Vivamus sagittis lacus vel augue laoreet rutrum
+      faucibus dolor auctor. Maecenas faucibus mollis interdum. Etiam porta
+      sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus
+      commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+      amet risus. Cum sociis natoque penatibus et magnis dis parturient
+      montes, nascetur ridiculus mus. Fusce dapibus, tellus ac cursus commodo,
+      tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+      Nulla vitae elit libero, a pharetra augue. Nulla vitae elit libero, a
+      pharetra augue. Cras mattis consectetur purus sit amet fermentum.
+    </p>
+    <p id="step2" class="par">
+      Courage
+      Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper
+      nulla non metus auctor fringilla. Duis mollis, est non commodo luctus,
+      nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed
+      odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce
+      dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+      fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus
+      commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+      amet risus. Curabitur blandit tempus porttitor. Donec id elit non mi
+      porta gravida at eget metus.
+    </p>
+    <p id="step3" class="par">
+      Courage
+      Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper
+      nulla non metus auctor fringilla. Duis mollis, est non commodo luctus,
+      nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed
+      odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce
+      dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+      fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus
+      commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+      amet risus. Curabitur blandit tempus porttitor. Donec id elit non mi
+      porta gravida at eget metus.
+    </p>
+    <p id="step4" class="par">
+      Courage
+      Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper
+      nulla non metus auctor fringilla. Duis mollis, est non commodo luctus,
+      nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed
+      odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce
+      dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+      fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus
+      commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+      amet risus. Curabitur blandit tempus porttitor. Donec id elit non mi
+      porta gravida at eget metus.
+    </p>
+    <p id="step5" class="par">
+      Courage
+      Donec ullamcorper nulla non metus auctor fringilla. Donec ullamcorper
+      nulla non metus auctor fringilla. Duis mollis, est non commodo luctus,
+      nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed
+      odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce
+      dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
+      fermentum massa justo sit amet risus. Fusce dapibus, tellus ac cursus
+      commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
+      amet risus. Curabitur blandit tempus porttitor. Donec id elit non mi
+      porta gravida at eget metus.
+    </p>
+  </div>
+  <div class = "random">
+    <div class="randomTitles"></div>
+    <button type="button" class="shuffle">Shuffle ⟳</button>
+  </div>
+ 
+  <div id="closure" class="closure">
+    <div style="padding:0rem 2rem 2rem 2rem;">
+      <div style="font-weight: 600;">Methods</div>
+      <div> To build the dataset of headlines, I scraped data from the biggest Russian state media “1 channel” from 24
+        Feb 2022 until 24 Apr 2022. As a result, the dataset encompasses 5468 headlines. For the unique words extraction
+        I used Voyant tool. For the contextual analysis I queried the dataset containing unique words.</div>
+      <div style="font-weight: 600; margin-top: 24px;">Limitations</div>
+      <div> I acknowledge that being Russian and living most of my life in Russia can both help to work with headlines
+        from Russian media, but also can set biases in terms of my own opinion on this topic. In addition, there may be
+        some inaccuracies due to automatic translation of the headlines.
+      </div>
+      <div style="font-weight: 600; margin-top: 24px;">Sources</div>
+      <div> James Combs and Dan Nimmo (1993) The New Propaganda: The Dictatorship of Palaver in Contemporary Politics.
+        New York: Longman
+      </div>
+    </div>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script>
+    var dv = d3.select('.words')
+    var keysArea = d3.select(".keywords")
+
+    d3.tsv("./data/keywords-d3-eng.tsv").then(function (datum) {
+
+
+
+
+      function showKeywords(data, data2) {
+        keysArea
+          .selectAll(".wordsTitle")
+          .data(data)
+          .join("span")
+          .html(function (d) {
+            return d.term + " [" + d.count + "]"
+          })
+          .classed("wordsTitle", true)
+
+
+
+        keysArea
+          .append("div")
+          .text("SHOW MORE +")
+          .style("color", "#e5e5e5")
+          .classed("show-more", true)
+          .on('click', function (d) {
+            keysArea
+              .selectAll(".wordsTitle")
+              .data(data2)
+              .join()
+              .html(function (d) {
+                return d.term + " [" + d.count + "]"
+              })
+              .classed("wordsTitle", true)
+
+            keysArea
+              .selectAll(".show-more")
+              .style("display", "none")
+
+          })
+
+
+      }
+
+      var datumFiltered = datum.filter(function (e) {
+        return e.status === "normal"
+      })
+
+      showKeywords(datumFiltered, datum)
+
+
+
+
+
+
+
+
+
+
+
+    })
+
+ 
+
+d3.tsv("./data/channel-1-eng-fin.tsv").then(function (data) {
+
+
+
+let title = data.map(function (e) {
+        return e.title
+      })
+
+      let date = data.map(function (e) {
+        return e.date
+      })
+
+      let link = data.map(function (e) {
+        return e.link
+      })
+
+
+let random;
+let titleCard = d3.select(".randomTitles");
+
+function rnd(){
+random = Math.floor(Math.random() * title.length);
+console.log(random, title[random]);
+return random;
+}
+
+
+function drawCards(){
+  for(i=1;i<4;i++){
+  titleCard
+.append("div")
+.classed(`titleCard-${i}`,true)
+.style("background-color","#e5e5e5")
+.style("width","300px")
+.style("color","#141414")
+.attr("id","titleCards")
+
+rnd()
+
+d3.select(`.titleCard-${i}`)
+.html('<div class="tooltipTitle">' + title[random] + '</div>' +
+              '<div class = "tooltipDate"><a href="' + link[random] + '"> Link →</a>' +
+              '<div class="tooltipDate">' + date[random] + '</div></div>')
+}
+}
+
+d3.select(".shuffle")
+.on("click", function(){
+  d3.selectAll("#titleCards")
+  .remove()
+
+  drawCards()  
+})
+
+drawCards()
+
+  
+})
+
+
+    d3.tsv("data/subset-d3-eng.tsv").then(function (data) {
+
+      
+
+      var dataWar = data.filter(function (e) {
+        return e.topic === "war"
+      })
+      var dataCourage = data.filter(function (e) {
+        return e.topic === "courage, courageous"
+      })
+      var dataRefugees = data.filter(function (e) {
+        return e.topic === "refugees"
+      })
+
+      var dataUkraine = data.filter(function (e) {
+        return e.topic === "Ukraine"
+      })
+
+      var dataRussia = data.filter(function (e) {
+        return e.topic === "Russia"
+      })
+
+      var dataRussia = data.filter(function (e) {
+        return e.topic === "Russia"
+      })
+
+      var dataRussian = data.filter(function (e) {
+        return e.topic === "Russian"
+      })
+
+      var dataUkrainian = data.filter(function (e) {
+        return e.topic === "Ukrainian"
+      })
+
+      var dataRussianMilitary = data.filter(function (e) {
+        return e.topic === "Russian military"
+      })
+
+      var dataUkrainianMilitary = data.filter(function (e) {
+        return e.topic === "Ukrainian military"
+      })
+
+      var dataWarTopic = dataWar[0].topic
+      var dataCourageTopic = dataCourage[0].topic
+      var dataRefugeesTopic = dataRefugees[0].topic
+      var dataUkraineTopic = dataUkraine[0].topic
+      var dataRussiaTopic = dataRussia[0].topic
+      var dataUkrainianTopic = dataUkrainian[0].topic
+      var dataRussianTopic = dataRussian[0].topic
+      var dataUkrainianMilitaryTopic = dataUkrainianMilitary[0].topic
+      var dataRussianMilitaryTopic = dataRussianMilitary[0].topic
+
+
+      function addTitle(data) {
+        dv
+          .selectAll(".wordsTitle")
+          .data(data[0])
+          .join(function (enter) {
+
+              enter.append("div")
+                .html(function (d) {
+                  return data
+                })
+                .classed("wordsTitle", true)
+            },
+            function (update) {
+              update.html(function (d) {
+                return data
+              })
+            })
+      }
+
+
+
+      function addSecondTitle(data) {
+        dv
+
+          .append("div")
+          .html(function (d) {
+            return data
+          })
+          .classed("wordsTitle", true)
+      }
+
+      function addSecondBlock(data) {
+        dv
+          .append("span")
+          .data(data)
+          .html(function (d) {
+            return "• " + d.phrase
+          })
+          .classed("span-words", true)
+      }
+
+      addTitle(dataWarTopic)
+
+
+
+      var dv2 = d3.select('.words')
+        .append("div")
+
+
+
+      var tooltipDiv = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+
+
+
+      function addSecondBlock(data) {
+
+        dv
+          .append("div")
+          .selectAll(".span-words-add")
+
+          // .data(data, function (d) {
+          //   console.log(d)
+          //   return d.phrase
+          // })
+          .data(data)
+          .join(function (enter) {
+              enter.append("span")
+                .html(function (d) {
+                  return "• " + d.phrase
+                })
+                .classed("span-words-add", true)
+                .on("mouseover", function (e, d) {
+
+                  tooltipDiv
+                    .style("opacity", 1)
+                    .html('<div class="tooltipTitle">' + d.title + '</div>' +
+                      '<div class = "tooltipDate"><a href="' + d.link + '"> Link →</a>' +
+                      '<div class="tooltipDate">' + d.date + '</div></div>')
+
+
+
+                    .style("left", (e.pageX - 35) + "px")
+                    .style("top", (e.pageY + 8) + "px")
+
+                })
+                .on("mousemove", function (e, d) {
+
+                  tooltipDiv
+                    .style("opacity", 1)
+                    .html('<div class="tooltipTitle">' + d.title + '</div>' +
+                      '<div class = "tooltipDate"><a href="' + d.link + '"> Link →</a>' +
+                      '<div class="tooltipDate">' + d.date + '</div></div>')
+                    .style("left", (e.pageX - 35) + "px")
+                    .style("top", (e.pageY + 8) + "px")
+
+                })
+                .on("mouseout", function (e, d) {
+                  tooltipDiv
+                    .style("opacity", 0)
+
+                });
+              
+
+            },
+            function (update) {
+              update.html(function (d) {
+                return "• " + d.phrase
+              })
+            },
+            function (exit) {
+             exit.remove()
+            
+            })
+      }
+
+     
+
+
+
+     
+
+      function addText(data) {
+        dv2
+          .selectAll(".span-words")
+          // .data(data, function (d) {
+          //   console.log(d)
+          //   return d.phrase
+          // })
+          .data(data)
+          .join(function (enter) {
+              enter.append("span")
+                .html(function (d) {
+                  return "• " + d.phrase
+                })
+                .classed("span-words", true)
+                .on("mouseover", function (e, d) {
+                  // console.log("over")
+                  tooltipDiv
+                    .style("opacity", 1)
+                    .html('<div class="tooltipTitle">' + d.title + '</div>' +
+                      '<div class = "tooltipDate"><a href="' + d.link + '"> Link →</a>' +
+                      '<div class="tooltipDate">' + d.date + '</div></div>')
+
+
+
+                    .style("left", (e.pageX - 35) + "px")
+                    .style("top", (e.pageY + 8) + "px")
+
+                })
+                .on("mouseout", function (e, d) {
+                  setTimeout(function () {
+                    console.log(lockTooltip)
+                    tooltipDiv
+                      .style("opacity", !lockTooltip ? 0 : 1)
+                  }, 0)
+
+
+                });
+
+
+            },
+            function (update) {
+              update.html(function (d) {
+                return "• " + d.phrase
+              })
+            })
+
+        let lockTooltip = false;
+        d3.select(".tooltip")
+          .on("mouseover", function (d) {
+            tooltipDiv
+              .style("opacity", 1)
+            lockTooltip = true;
+          })
+          .on("mouseout", function (d) {
+            tooltipDiv
+              .style("opacity", 0)
+            lockTooltip = false;
+          })
+
+      }
+
+
+
+
+
+
+
+
+
+      addText(dataWar)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      var lockStart = false,
+        lock1 = false,
+        lock2 = false,
+        lock3 = false,
+        lock4 = false
+        lock5 = false;
+      var step1 = document.getElementById("step1");
+      var step2 = document.getElementById("step2");
+      var step3 = document.getElementById("step3");
+      var step4 = document.getElementById("step4");
+      var step5 = document.getElementById("step5");
+      var start = document.getElementById("start");
+      var visibilityMargin = window.innerHeight / 3;
+      document.addEventListener("scroll", () => {
+
+        if (window.innerHeight - visibilityMargin >= start.getBoundingClientRect().y &&
+          start.getBoundingClientRect().y > 0) {
+
+          addTitle(dataWarTopic)
+          addText(dataWar)
+          d3.selectAll(".span-words-add")
+            .remove()
+          lockStart = false;
+          lock1 = false;
+          lock2 = false;
+          lock3 = false;
+          lock4 = false;
+          lock5 = false;
+        }
+
+
+        if (
+          window.innerHeight - visibilityMargin >= step1.getBoundingClientRect().y &&
+          step1.getBoundingClientRect().y > 0 &&
+          !lockStart
+        ) {
+          lockStart = true;
+
+          addTitle(dataUkraineTopic)
+          addText(dataUkraine)
+          d3.selectAll(".span-words-add")
+            .remove()
+          addSecondTitle(dataRussiaTopic)
+          addSecondBlock(dataRussia)
+
+
+
+          
+          lock1 = false;
+          lock2 = false;
+          lock3 = false;
+          lock4 = false;
+          lock5 = false;
+        }
+
+        if (
+          window.innerHeight - visibilityMargin >= step2.getBoundingClientRect().y &&
+          step2.getBoundingClientRect().y > 0 &&
+          !lock1
+        ) {
+          lock1 = true;
+
+
+          addTitle(dataUkrainianTopic)
+          addText(dataUkrainian)
+          d3.selectAll(".span-words-add")
+            .remove()
+          addSecondTitle(dataRussianTopic)
+          addSecondBlock(dataRussian)
+
+
+
+          lockStart = false;
+          lock2 = false;
+          lock3 = false;
+          lock4 = false;
+          lock5 = false;
+        }
+        if (
+          window.innerHeight - visibilityMargin >= step3.getBoundingClientRect().y &&
+          step3.getBoundingClientRect().y > 0 &&
+          !lock2
+        ) {
+          lock2 = true;
+
+          addTitle(dataUkrainianMilitaryTopic)
+          addText(dataUkrainianMilitary)
+          d3.selectAll(".span-words-add")
+            .remove()
+          addSecondTitle(dataRussianMilitaryTopic)
+          addSecondBlock(dataRussianMilitary)
+
+
+          lockStart = false;
+          lock1 = false;
+          lock3 = false;
+          lock4 = false;
+          lock5 = false;
+        }
+
+        if (
+          window.innerHeight - visibilityMargin >= step4.getBoundingClientRect().y &&
+          step4.getBoundingClientRect().y > 0 &&
+          !lock3
+        ) {
+          lock3 = true;
+
+          addTitle(dataCourageTopic)
+          addText(dataCourage)
+          d3.selectAll(".span-words-add")
+            .remove()
+
+
+          lockStart = false;
+          lock1 = false;
+          lock2 = false;
+          lock4 = false;
+          lock5 = false;
+        }
+
+
+        if (
+          window.innerHeight - visibilityMargin >= step5.getBoundingClientRect().y &&
+          step5.getBoundingClientRect().y > 0 &&
+          !lock4
+        ) {
+          lock4 = true;
+
+          addTitle(dataRefugeesTopic)
+          addText(dataRefugees)
+          d3.selectAll(".span-words-add")
+            .remove()
+
+
+          lockStart = false;
+          lock1 = false;
+          lock2 = false;
+          lock3 = false;
+          lock5 = false;
+        }
+      });
+
+    })
+  </script>
+</body>
+
+</html>
