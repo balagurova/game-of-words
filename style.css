@@ -95,6 +95,10 @@ font-style: normal;
 }
 
 
+.imgTitle{
+  width: 60vw;
+}
+
 #title {
   width: 50vw;
   height: 10vh;
@@ -126,7 +130,7 @@ font-style: normal;
   background-color: #141414;
   border: 0.1rem white solid;
   color: #e5e5e5;
-  font-size: 3 rem;
+  font-size: 1.2rem;
 }
 
 #titleCards {
@@ -157,6 +161,7 @@ font-style: normal;
 
 #titleCards .tooltipTitle {
   padding-right: 3rem;
+  font-size: 1.1rem;
 
 }
 
@@ -190,11 +195,6 @@ font-style: normal;
   margin-top: 1.4rem;
 }
 
-/* .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center
-} */
 
 
 #background {
@@ -228,13 +228,7 @@ h2 {
   z-index: 4;
 }
 
-/* p {
-  font-size: 1.6rem;
-  font-family: "Montserrat";
-  font-weight: 400;
-  line-height: 1.4;
-  z-index: 10;
-} */
+
 
 #introduction,
 #conclusions {
@@ -245,7 +239,7 @@ h2 {
 .titleBlock {
   z-index: 0;
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 50%;
   display: flex;
   flex-direction: column;
@@ -414,12 +408,17 @@ justify-content: space-between;
   margin-right: auto;
   width: 35%;
   font-family: HK-Grotesk;
+  font-size: 1.1rem;
   color: #e5e5e5;
   line-height: 1.6;
 }
 
-.bold{
-  font-family: HK-Grotesk-bold;
-  margin-top: 2rem;
-  text-transform: uppercase;
+.end {
+  margin-top: 3rem;
+}
+
+.aboutDiv{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
