@@ -1,6 +1,5 @@
-var txt = `Russia Russian Ukrainian Ukraine Ministry of Defense Donbass Putin military special operation Mariupol protection DPR APU LC USA time nationalists residents the president sanctions frames MFA UN Moscow help negotiation programs refugees Lavrov sides Luhansk strength Human Kyiv foreign folk data territories chapter today support day new told courage security city Donetsk declared`;
+var txt = `Russia, Russian, Ukraine, military, Ukrainian, Donbass, special operation, Ministry of Defense, Putin, Mariupol, president, protection, residents, sanctions, negotiation, Kyiv, USA, time, support, humanitarian, nationalists, help, countries, weapon, republic, Moscow, strength, city, blows, government, Donetsk, chapter, situation, UN, measures, thousand, programs, refugees, security forces, Lavrov, sides, troops, Luhansk, Human, foreign, folk, showed, data, territory, today, west, Western, Crimea, points, told, minister, courage, security, Donetsk, declared, show, channel, control, regions, authorities, heroism, advice, informed, conditions, children, tasks, defense, objects, Belarus, Germany, citizens, economy, media, anti-Russian`;
 txt = txt.split(' ')
-// console.log(txt)
 
 
 
