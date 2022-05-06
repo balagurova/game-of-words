@@ -356,7 +356,7 @@ font-style: normal;
 } */
 
 .tooltip{
-  padding: 24px 32px 24px 16px;
+  padding: 2rem 3rem 2rem 1.4rem;
 opacity: 1;
 position: absolute;
 background-color: #e5e5e5;
@@ -367,8 +367,8 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 color: #141414;
-height: 100px;
-width: 300px;
+height: 10rem;
+width: 24rem;
 
 }
 
