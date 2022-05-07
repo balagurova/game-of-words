@@ -38,8 +38,8 @@ font-style: normal;
   margin-bottom: 0rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
   align-items: flex-start;
+  
 }
 
 #sticky {
@@ -51,7 +51,9 @@ font-style: normal;
   width: 35rem;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
@@ -354,6 +356,23 @@ font-style: normal;
 font-weight: 300;
 font-style: normal;
 } */
+
+.instructions {
+  font-family: input-mono,monospace;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 0.9rem;
+  color: #bbb!important;
+  opacity:0.8;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.titleBlock .instructions {
+  position: absolute;
+  top: -9rem;
+}
 
 .tooltip{
   padding: 2rem 3rem 2rem 1.4rem;
