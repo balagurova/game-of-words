@@ -24,7 +24,7 @@
       <img class = "imgTitle" style="zoom:100%" src="./img/title-1.png" alt="Game of Words"></img>
 
       <h3 class="lead">A VISUAL ESSAY ABOUT THE INFORMATION MANIPULATION IN THE RUSSIAN NEWS</h3>
-      <div class = "instructions">[You can move the words with the cursor and scroll down]</div>
+      <div class = "instructions">[MOVE the words with the cursor and scroll down]</div>
     </div>
 
   </div>
@@ -50,13 +50,13 @@
 
   <div id="lane">
     <div id="sticky">
-      <div class = "instructions" style="position:absolute; top: 34rem;">[You can hover on each phrase</br>to see the whole headline]</div>
       <div class='words' width="400" height="800"></div>
     </div>
    
     <div id="start" class="par">
       <p>To gather more insight into those unique words from the list above, let's look at the contextual phrases around some of them.</p>
       <p> For example, the word <span class='wordsTitle'>special operation [ 419 ]</span> describes  the current actions of the Russian military on the territory of Ukraine. Why? Because it is forbidden by Roskomnadzor to call those actions an attack, an invasion, or a declaration of war.</p>
+     <div class = "instructions">[HOVER ON A PHRASE ON THE RIGHT </br> TO SEE THE WHOLE HEADLINE]</div>
     </div>
 
     <div id="step1" class="par">
@@ -356,6 +356,9 @@
 
 
 
+
+
+
       var tooltipDiv = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("opacity", 0)
@@ -488,6 +491,9 @@
             lockTooltip = false;
           })
 
+
+
+
       }
 
 
@@ -537,6 +543,8 @@
 
           addTitle(dataSpecialTopic)
           addText(dataSpecial)
+
+         
           d3.selectAll(".span-words-add")
             .remove()
           lockStart = false;
