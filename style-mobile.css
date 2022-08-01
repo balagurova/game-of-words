@@ -1,0 +1,105 @@
+@media screen and (max-width: 600px) {
+
+  html {
+    font-size: 2vw;
+  }
+
+  body {
+    margin: 0 8rem 0rem 8rem;
+  }
+
+  .mob{
+    display:block;
+  }
+
+  #background {
+    width: 100vw;
+    left: 0px;
+  }
+
+  .intro {
+    height: fit-content;
+    margin-bottom: 10rem;
+  }
+
+  .words{
+    display: none;
+  }
+
+
+  .step {
+    flex-direction: column;
+  }
+
+  .finalSection {
+    font-size: 1.3rem;
+    width:fit-content;
+  }
+
+
+  .randomTitles {
+    flex-direction: column;
+    height: fit-content;
+    
+  }
+
+  .random {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0
+  }
+
+  #titleCards {
+    height: fit-content;
+    display: flex;
+    
+  }
+
+  .tooltipTitle{
+    height: 6rem;
+  }
+
+  .lead {
+    font-size: 0.9rem;
+  }
+
+  .par {
+    margin-left: 0rem;
+    margin-bottom: 10rem;
+  }
+
+  .last-par {
+    margin-bottom: 10rem;
+  }
+
+  #start {
+    margin-top: 0;
+  }
+
+  .left {
+    margin-left: 0;
+  }
+
+  .keywords {
+    margin: 0;
+  }
+
+  .step {
+    margin-bottom: 10rem;
+  }
+
+
+  #sticky {
+    margin-left: 0;
+    height: fit-content;
+    position: relative;
+  }
+
+  .intro-text {
+    width: fit-content;
+  }
+
+  .left {
+    margin-bottom: 2rem;
+  }
+}

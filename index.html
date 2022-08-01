@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style-mobile.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="./js/words.js"></script>
   <link rel="stylesheet" href="https://use.typekit.net/ktx3ijp.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,118 +22,172 @@
   <div id="background"></div>
   <div id="introduction">
     <div class="titleBlock">
-
-      <img class = "imgTitle" style="zoom:100%" src="./img/title-1.png" alt="Game of Words"></img>
-
-      <h3 class="lead">A VISUAL ESSAY ABOUT THE INFORMATION MANIPULATION IN THE RUSSIAN NEWS</h3>
-      <div class = "instructions">[MOVE the words with the cursor and scroll down]</div>
+      <h3 class="lead">A VISUAL ESSAY ABOUT INFORMATION MANIPULATION IN THE RUSSIAN MEDIA</h3>
+      <h1>Game of words</h1>
+      <h3 class="lead">IDEA, DESIGN AND CODING BY ANASTASIIA BALAGUROVA</h3>
     </div>
-
   </div>
 
 
+  <div class="intro">
+    <div class="intro-text">
+      <p> In this visual essay, I want to look at how Russian media has been covering events during the war in Ukraine.
+        What are the key messages and what is their context?
+      </p>
+      <p>To explore these questions, I have visualized the language used in the headlines of the biggest state media
+        channel in Russia. The dataset contains all the headlines from the beginning of the war with Ukraine, 24 Feb,
+        until 24 Apr 2022.</p>
+    </div>
+  </div>
 
 
-
-  <br />
   <div class="step">
     <div class="left">
-
-      <p> In this visual essay, I want to look at how Russian media has been covering events during the war in Ukraine. What are the key messages and what is their context?
-      </p>
-
-      <p>To explore these questions, I have visualized the language used in the headlines of the biggest state media channel in Russia. The dataset contains all the headlines from the beginning of the war with Ukraine, 24 Feb, until 24 Apr 2022.</p>
-
-      <p>The most frequent words used in those headlines are presented on the right. The number in [ square brackets ] is a number of mentions.</p>
+      <p>The most frequent words used in those headlines are presented on the right. The number in [ square brackets ]
+        is a number of mentions.</p>
     </div>
-
     <div class="keywords"></div>
   </div>
+
 
   <div id="lane">
     <div id="sticky">
       <div class='words' width="400" height="800"></div>
     </div>
-   
-    <div id="start" class="par">
-      <p>To gather more insight into those unique words from the list above, let's look at the contextual phrases around some of them.</p>
-      <p> For example, the word <span class='wordsTitle'>special operation [ 419 ]</span> describes  the current actions of the Russian military on the territory of Ukraine. Why? Because it is forbidden by Roskomnadzor to call those actions an attack, an invasion, or a declaration of war.</p>
-     <div class = "instructions">[HOVER ON A PHRASE ON THE RIGHT </br> TO SEE THE WHOLE HEADLINE]</div>
+    <div id="start" class="start par">
+      <p>To gather more insight into those unique words from the list above, let's look at the contextual phrases around
+        some of them.</p>
+      <p> For example, the word <span class='wordsTitle'>special operation [ 419 ]</span> describes the current actions
+        of the Russian military on the territory of Ukraine. Why? Because it is forbidden by Roskomnadzor to call those
+        actions an attack, an invasion, or a declaration of war.</p>
+      <div class="instructions">[HOVER ON A PHRASE ON THE RIGHT </br> TO SEE THE WHOLE HEADLINE]</div>
+      <div class='words1 mob' width="400" height="800"></div>
     </div>
 
+
     <div id="step1" class="par">
-      <p>Unsurprisingly, the word <span class='wordsTitle'>war [ 32 ]</span> was used quite rarely. These mentions refer to the diplomatic, hybrid, or other kinds of wars waged by the 'collective West' against Russia.</p>
-      <p>The substitution of the word 'war' with the phrase ‘special operation’ can be called Euphemism. This information manipulation selects words to pacify the audience by making an unpleasant reality more tolerable.</p>
-      <p class="note">Rhetorical Techniques mentioned in this essay are classified by the Institute for Propaganda Analysis (IPA) which was a U.S.-based organization operating from 1937 to 1942.</p>
+      <p>Unsurprisingly, the word <span class='wordsTitle'>war [ 32 ]</span> was used quite rarely. These mentions refer
+        to the diplomatic, hybrid, or other kinds of wars waged by the 'collective West' against Russia.</p>
+      <p>The substitution of the word 'war' with the phrase ‘special operation’ can be called Euphemism. This
+        information manipulation selects words to pacify the audience by making an unpleasant reality more tolerable.
+      </p>
+      <p class="note">Rhetorical Techniques mentioned in this essay are classified by the Institute for Propaganda
+        Analysis (IPA) which was a U.S.-based organization operating from 1937 to 1942.</p>
+      <div class='words2 mob' width="400" height="800"></div>
     </div>
+
 
     <div id="step2" class="par">
       <p>Among the most frequent words are <span class='wordsTitle'>Russia [ 1206 ]</span> and <span
-          class='wordsTitle'>Ukraine [ 816 ]</span>. There are many contextual phrases, so here are only first 20 phrases for each keyword. Ukraine is associated with negative notions of destruction and hostility — 'refuse', 'disrupt', 'planned an attack', whereas most phrases related to Russia are neutral or positive – 'ready to declare', 'is a land of opportunity' etc. The contrast between those phrases can be an example of another rhetorical device called Transfer. It is when the speaker deliberately associates the opponent with something very negative, and themselves with universally good things.</p>
+          class='wordsTitle'>Ukraine [ 816 ]</span>. There are many contextual phrases, so here are only first 20
+        phrases for each keyword. Ukraine is associated with negative notions of destruction and hostility — 'refuse',
+        'disrupt', 'planned an attack', whereas most phrases related to Russia are neutral or positive – 'ready to
+        declare', 'is a land of opportunity' etc. The contrast between those phrases can be an example of another
+        rhetorical device called Transfer. It is when the speaker deliberately associates the opponent with something
+        very negative, and themselves with universally good things.</p>
+      <div class='words3 mob' width="400" height="800"></div>
     </div>
+
 
     <div id="step3" class="par">
-      <p>The adjectives <span class='wordsTitle'>Ukrainian [ 533 ]</span> and <span class='wordsTitle'>Russian [ 922 ]</span> can reveal which entities correspond to Russia or Ukraine. Among nouns related to the world 'Ukrainian', there are many loaded words such as 'radicals', 'nazis', and 'fakes'. There are no such words related to the word 'Russian'.
-        </p>
-      <p>This is an example of the Name-calling technique which implies the use of offensive names to induce rejection or condemnation without objective consideration of the facts.
+      <p>The adjectives <span class='wordsTitle'>Ukrainian [ 533 ]</span> and <span class='wordsTitle'>Russian [ 922
+          ]</span> can reveal which entities correspond to Russia or Ukraine. Among nouns related to the world
+        'Ukrainian', there are many loaded words such as 'radicals', 'nazis', and 'fakes'. There are no such words
+        related to the word 'Russian'.
       </p>
+      <p>This is an example of the Name-calling technique which implies the use of offensive names to induce rejection
+        or condemnation without objective consideration of the facts.
+      </p>
+      <div class='words4 mob' width="400" height="800"></div>
     </div>
+
 
     <div id="step4" class="par">
-      <p>Here we have <span class='wordsTitle'>Russian military [ 308 ]</span> and <span class='wordsTitle'>Ukrainian military [ 79 ]</span>. The Transfer technique, as well as Name-calling, are presented here as in the previous examples.</p>
-      <p>In addition, there is one more device that can be noticed here. It is called Appeal to Emotion. Such phrases as 'save the life of wounded officer' or 'demined the territory of the kindergarten' can be very appealing to the audience even though they do not represent the whole picture.</p>
+      <p>Here we have <span class='wordsTitle'>Russian military [ 308 ]</span> and <span class='wordsTitle'>Ukrainian
+          military [ 79 ]</span>. The Transfer technique, as well as Name-calling, are presented here as in the previous
+        examples.</p>
+      <p>In addition, there is one more device that can be noticed here. It is called Appeal to Emotion. Such phrases as
+        'save the life of wounded officer' or 'demined the territory of the kindergarten' can be very appealing to the
+        audience even though they do not represent the whole picture.</p>
+      <div class='words5 mob' width="400" height="800"></div>
     </div>
 
+
     <div id="step5" class="par">
-      <p>Speaking of <span class='wordsTitle'>refugees [ 101 ]</span>, there is not a single mention of the presence of Ukrainian refugees in Europe. All the refugees mentioned in the headlines come and settle in Russia. But according to the UN, on 5 May 2022, there were 5.7 mln Ukrainian refugees in total, 0.7 mln of which are in Russia.</p>
-      <p>When the media use only those facts and details that support their argument, such device is called Card Stacking or Cherry-Picking.</p>
+      <p>Speaking of <span class='wordsTitle'>refugees [ 101 ]</span>, there is not a single mention of the presence of
+        Ukrainian refugees in Europe. All the refugees mentioned in the headlines come and settle in Russia. But
+        according to the UN, on 5 May 2022, there were 5.7 mln Ukrainian refugees in total, 0.7 mln of which are in
+        Russia.</p>
+      <p>When the media use only those facts and details that support their argument, such device is called Card
+        Stacking or Cherry-Picking.</p>
+      <div class='words6 mob' width="400" height="800"></div>
     </div>
-  
-  <div id="step6" class="par last-par">
-    <p>The last example is <span class='wordsTitle'>COURAGE [ 67 ]</span>. This word is often used in conjunction with such words as heroism, professionalism, fortitude. Another observation about this word is that it is always used in the context of the Russian military. </p>
+
+
+    <div id="step6" class="par last-par">
+      <p>The last example is <span class='wordsTitle'>COURAGE [ 67 ]</span>. This word is often used in conjunction with
+        such words as heroism, professionalism, fortitude. Another observation about this word is that it is always used
+        in the context of the Russian military. </p>
       <p>This pattern can refer to the Glittering generality. It is a vague word or phrase that evokes positive feelings
         rather than conveys information.</p>
+      <div class='words7 mob' width="400" height="800"></div>
     </div>
   </div>
+
 
   <div class="random">
     <div class="randomTitles"></div>
     <button type="button" class="shuffle">Shuffle ⟳</button>
   </div>
 
-  <div id="closure" class="closure">
-    <div class = "aboutDiv">
 
-      <div><div class = 'span-words about' >[ METHOD ]</div>
-      <div> To build the dataset of headlines, I scraped data from the biggest Russian state media '1st channel' from 24 Feb 2022 until 24 Apr 2022. As a result, the dataset encompasses 5,468 headlines. For the unique word extraction, I used the Voyant tool. For the contextual analysis, I queried the dataset containing unique words using Python.</div></div>
-      <div><div class = 'span-words about' >[ LIMITATIONS ]</div>
-      <div> I acknowledge that being Russian and living most of my life in Russia can both help to work with headlines from Russian media, but also can set biases in terms of my own opinion on this topic. In addition, there may be some inaccuracies due to the automatic translation of the headlines.
-      </div></div>
-      <div><div class = 'span-words about' >[ FUTURE WORK ]</div>
-      <div> Further work might be done in different directions. Firstly, a number of media can be expanded.  It would be interesting to compare other media from Russia as well as media from other countries. Secondly, it is important to see how the wording has changed (or not) over a long period. More structured contextual analysis of headlines or texts can reveal more manipulative patterns used. 
-      </div></div>
-      <div><div class = 'span-words about' >[ SOURCES ]</div>
-      <div>· James Combs and Dan Nimmo (1993) The New Propaganda: The Dictatorship of Palaver in Contemporary Politics.
-        New York: Longman
+  <div id="finalSection" class="finalSection">
+    <div class="finalText">
+      <div>
+        <div class='span-words about'>[ METHOD ]</div>
+        <div> To build the dataset of headlines, I scraped data from the biggest Russian state media '1st channel' from
+          24 Feb 2022 until 24 Apr 2022. As a result, the dataset encompasses 5,468 headlines. For the unique word
+          extraction, I used the Voyant tool. For the contextual analysis, I queried the dataset containing unique words
+          using Python.</div>
       </div>
-      <div>· Ecker, U. K. H., Lewandowsky, S., Chang, E. P., & Pillai, R. (2014). The effects of subtle misinformation in
-        news headlines. Journal of Experimental Psychology: Applied, 20(4), 323–335. https://doi.org/10.1037/xap0000028
-      </div></div>
-      
-      
+      <div>
+        <div class='span-words about'>[ LIMITATIONS ]</div>
+        <div> I acknowledge that being Russian and living most of my life in Russia can both help to work with headlines
+          from Russian media, but also can set biases in terms of my own opinion on this topic. In addition, there may
+          be some inaccuracies due to the automatic translation of the headlines.
+        </div>
+      </div>
+      <div>
+        <div class='span-words about'>[ FUTURE WORK ]</div>
+        <div> Further work might be done in different directions. Firstly, a number of media can be expanded. It would
+          be interesting to compare other media from Russia as well as media from other countries. Secondly, it is
+          important to see how the wording has changed (or not) over a long period. More structured contextual analysis
+          of headlines or texts can reveal more manipulative patterns used.
+        </div>
+      </div>
+      <div>
+        <div class='span-words about'>[ SOURCES ]</div>
+        <div>· James Combs and Dan Nimmo (1993) The New Propaganda: The Dictatorship of Palaver in Contemporary
+          Politics.
+          New York: Longman
+        </div>
+        <div>· Ecker, U. K. H., Lewandowsky, S., Chang, E. P., & Pillai, R. (2014). The effects of subtle misinformation
+          in
+          news headlines. Journal of Experimental Psychology: Applied, 20(4), 323–335.
+          https://doi.org/10.1037/xap0000028
+        </div>
+      </div>
     </div>
   </div>
 
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+
   <script>
-    var dv = d3.select('.words')
+    let random;
+    let titleCard = d3.select(".randomTitles");
     var keysArea = d3.select(".keywords")
 
+    //keywords
     d3.tsv("./data/keywords-d3-eng.tsv").then(function (datum) {
-
-
-
-
       function showKeywords(data, data2) {
         keysArea
           .selectAll(".wordsTitle")
@@ -141,8 +197,6 @@
             return d.term + " [" + d.count + "]"
           })
           .classed("wordsTitle", true)
-
-
 
         keysArea
           .append("div")
@@ -162,10 +216,7 @@
             keysArea
               .selectAll(".show-more")
               .style("display", "none")
-
           })
-
-
       }
 
       var datumFiltered = datum.filter(function (e) {
@@ -173,25 +224,9 @@
       })
 
       showKeywords(datumFiltered, datum)
-
-
-
-
-
-
-
-
-
-
-
     })
 
-
-
     d3.tsv("./data/channel-1-eng-fin.tsv").then(function (data) {
-
-
-
       let title = data.map(function (e) {
         return e.title
       })
@@ -204,16 +239,11 @@
         return e.link
       })
 
-
-      let random;
-      let titleCard = d3.select(".randomTitles");
-
       function rnd() {
         random = Math.floor(Math.random() * title.length);
         console.log(random, title[random]);
         return random;
       }
-
 
       function drawCards() {
         for (i = 1; i < 4; i++) {
@@ -221,7 +251,6 @@
             .append("div")
             .classed(`titleCard-${i}`, true)
             .style("background-color", "#e5e5e5")
-            .style("width", "300px")
             .style("color", "#141414")
             .attr("id", "titleCards")
 
@@ -243,15 +272,9 @@
         })
 
       drawCards()
-
-
     })
 
-
     d3.tsv("data/subset-d3-eng.tsv").then(function (data) {
-
-
-
       var dataWar = data.filter(function (e) {
         return e.topic === "war"
       })
@@ -306,8 +329,12 @@
       var dataSpecialTopic = dataSpecial[0].topic
 
 
-      function addTitle(data) {
-        dv
+      var tooltipDiv = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0)
+
+      function addTitle(data, selector) {
+        d3.select(selector)
           .selectAll(".wordsTitle")
           .data(data[0])
           .join(function (enter) {
@@ -317,6 +344,7 @@
                   return data
                 })
                 .classed("wordsTitle", true)
+
             },
             function (update) {
               update.html(function (d) {
@@ -325,56 +353,73 @@
             })
       }
 
-
-
-      function addSecondTitle(data) {
-        dv
-
-          .append("div")
+      function addSecondTitle(data, selector) {
+        d3.select(selector)
+        .append('div')
           .html(function (d) {
             return data
           })
           .classed("wordsTitle", true)
       }
 
-      function addSecondBlock(data) {
-        dv
-          .append("span")
+      function addText(data, selector) {
+        d3.select(selector)
+          .selectAll(".span-words")
           .data(data)
-          .html(function (d) {
-            return "• " + d.phrase
+          .join(function (enter) {
+              enter.append("span")
+                .html(function (d) {
+                  return "• " + d.phrase
+                })
+                .classed("span-words", true)
+                .on("mouseover", function (e, d) {
+                  tooltipDiv
+                    .style("opacity", 1)
+                    .html('<div class="tooltipTitle">' + d.title + '</div>' +
+                      '<div class = "tooltipDate"><a href="' + d.link + '"> Link →</a>' +
+                      '<div class="tooltipDate">' + d.date + '</div></div>')
+
+
+
+                    .style("left", (e.pageX - 35) + "px")
+                    .style("top", (e.pageY + 8) + "px")
+
+                })
+                .on("mouseout", function (e, d) {
+                  setTimeout(function () {
+                    console.log(lockTooltip)
+                    tooltipDiv
+                      .style("opacity", !lockTooltip ? 0 : 1)
+                  }, 0)
+
+
+                });
+
+
+            },
+            function (update) {
+              update.html(function (d) {
+                return "• " + d.phrase
+              })
+            })
+
+        let lockTooltip = false;
+        d3.select(".tooltip")
+          .on("mouseover", function (d) {
+            tooltipDiv
+              .style("opacity", 1)
+            lockTooltip = true;
           })
-          .classed("span-words", true)
+          .on("mouseout", function (d) {
+            tooltipDiv
+              .style("opacity", 0)
+            lockTooltip = false;
+          })
       }
 
-      addTitle(dataSpecialTopic)
-
-
-
-      var dv2 = d3.select('.words')
-        .append("div")
-
-
-
-
-
-
-      var tooltipDiv = d3.select("body").append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0)
-
-
-
-      function addSecondBlock(data) {
-
-        dv
-          .append("div")
+      function addSecondBlock(data, selector) {
+        d3.select(selector)
           .selectAll(".span-words-add")
-
-          // .data(data, function (d) {
-          //   console.log(d)
-          //   return d.phrase
-          // })
           .data(data)
           .join(function (enter) {
               enter.append("span")
@@ -426,99 +471,11 @@
             })
       }
 
-
-
-
-
-
-
-      function addText(data) {
-        dv2
-          .selectAll(".span-words")
-          // .data(data, function (d) {
-          //   console.log(d)
-          //   return d.phrase
-          // })
-          .data(data)
-          .join(function (enter) {
-              enter.append("span")
-                .html(function (d) {
-                  return "• " + d.phrase
-                })
-                .classed("span-words", true)
-                .on("mouseover", function (e, d) {
-                  // console.log("over")
-                  tooltipDiv
-                    .style("opacity", 1)
-                    .html('<div class="tooltipTitle">' + d.title + '</div>' +
-                      '<div class = "tooltipDate"><a href="' + d.link + '"> Link →</a>' +
-                      '<div class="tooltipDate">' + d.date + '</div></div>')
-
-
-
-                    .style("left", (e.pageX - 35) + "px")
-                    .style("top", (e.pageY + 8) + "px")
-
-                })
-                .on("mouseout", function (e, d) {
-                  setTimeout(function () {
-                    console.log(lockTooltip)
-                    tooltipDiv
-                      .style("opacity", !lockTooltip ? 0 : 1)
-                  }, 0)
-
-
-                });
-
-
-            },
-            function (update) {
-              update.html(function (d) {
-                return "• " + d.phrase
-              })
-            })
-
-        let lockTooltip = false;
-        d3.select(".tooltip")
-          .on("mouseover", function (d) {
-            tooltipDiv
-              .style("opacity", 1)
-            lockTooltip = true;
-          })
-          .on("mouseout", function (d) {
-            tooltipDiv
-              .style("opacity", 0)
-            lockTooltip = false;
-          })
-
-
-
-
+      function addDiv(selector,className) {
+        d3.select(selector)
+          .append('div')
+          .classed(className, true)
       }
-
-
-
-
-
-
-
-
-
-      addText(dataSpecial)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       var lockStart = false,
         lock1 = false,
@@ -535,165 +492,225 @@
       var step6 = document.getElementById("step6");
       var start = document.getElementById("start");
 
+      addDiv('.words','wordsTitle')
+      addDiv('.words','wordsDesktop')
+      addDiv('.words','wordsTitleAdd')
+      addDiv('.words','wordsAdd')
+
+      addTitle(dataSpecialTopic, '.words')
+      addText(dataSpecial, '.wordsDesktop')
+      addTitle(dataSpecialTopic, '.words1')
+      addText(dataSpecial, '.wordsDesktop')
+
       var visibilityMargin = window.innerHeight / 3;
-      document.addEventListener("scroll", () => {
 
-        if (window.innerHeight - visibilityMargin >= start.getBoundingClientRect().y &&
-          start.getBoundingClientRect().y > 0) {
+      if (window.innerWidth < 600) {
 
-          addTitle(dataSpecialTopic)
-          addText(dataSpecial)
-
-         
-          d3.selectAll(".span-words-add")
-            .remove()
-          lockStart = false;
-          lock1 = false;
-          lock2 = false;
-          lock3 = false;
-          lock4 = false;
-          lock5 = false;
-          lock6 = false;
-        }
+        addTitle(dataSpecialTopic, '.words1')
+        addDiv('.words1','wordsMobile')
+        addText(dataSpecial, '.wordsMobile')
+        
+       
+        addTitle(dataWarTopic, '.words2')
+        addDiv('.words2','wordsMobile2')
+        addText(dataWar, '.wordsMobile2')
 
 
+        addTitle(dataRussiaTopic, '.words3')
+        addDiv('.words3','wordsMobile3')
+        addDiv('.words3','wordsTitleAdd3')
+        addDiv('.words3','wordsAdd3')
+        addText(dataRussia, '.wordsMobile3')
+        addSecondTitle(dataUkraineTopic, '.wordsTitleAdd3')
+        addSecondBlock(dataUkraine, '.wordsAdd3')
+
+        addTitle(dataRussianTopic, '.words4')
+        addDiv('.words4','wordsMobile4')
+        addDiv('.words4','wordsTitleAdd4')
+        addDiv('.words4','wordsAdd4')
+        addText(dataRussian, '.wordsMobile4')
+        addSecondTitle(dataUkrainianTopic, '.wordsTitleAdd4')
+        addSecondBlock(dataUkrainian, '.wordsAdd4')
+
+        addTitle(dataRussianMilitaryTopic, '.words5')
+        addDiv('.words5','wordsMobile5')
+        addDiv('.words5','wordsTitleAdd5')
+        addDiv('.words5','wordsAdd5')
+        addText(dataRussianMilitary, '.wordsMobile5')
+        addSecondTitle(dataUkrainianMilitaryTopic, '.wordsTitleAdd5')
+        addSecondBlock(dataUkrainianMilitary, '.wordsAdd5')
+        
+
+        addTitle(dataRefugeesTopic, '.words6')
+        addDiv('.words6','wordsMobile6')
+        addText(dataRefugees, '.wordsMobile6') 
 
 
-        if (
-          window.innerHeight - visibilityMargin >= step1.getBoundingClientRect().y &&
-          step1.getBoundingClientRect().y > 0 &&
-          !lockStart
-        ) {
-          lockStart = true;
-
-          addTitle(dataSpecialTopic)
-          addText(dataSpecial)
-          d3.selectAll(".span-words-add")
-            .remove()
-          addSecondTitle(dataWarTopic)
-          addSecondBlock(dataWar)
+        addTitle(dataCourageTopic, '.words7')
+        addDiv('.words7','wordsMobile7')
+        addText(dataCourage, '.wordsMobile7') 
 
 
+      }
 
-          lock1 = false;
-          lock2 = false;
-          lock3 = false;
-          lock4 = false;
-          lock5 = false;
-        }
+      if (window.innerWidth > 600) {
+        document.addEventListener("scroll", () => {
 
-        if (
-          window.innerHeight - visibilityMargin >= step2.getBoundingClientRect().y &&
-          step2.getBoundingClientRect().y > 0 &&
-          !lock1
-        ) {
-          lock1 = true;
+          if (window.innerHeight - visibilityMargin >= start.getBoundingClientRect().y &&
+            start.getBoundingClientRect().y > 0) {
 
+            addTitle(dataSpecialTopic, '.words')
+            addText(dataSpecial, '.wordsDesktop')
 
+            d3.selectAll(".span-words-add")
+              .remove()
 
-          addTitle(dataUkraineTopic)
-          addText(dataUkraine)
-          d3.selectAll(".span-words-add")
-            .remove()
-          addSecondTitle(dataRussiaTopic)
-          addSecondBlock(dataRussia)
-
-
-          lockStart = false;
-          lock2 = false;
-          lock3 = false;
-          lock4 = false;
-          lock5 = false;
-        }
-        if (
-          window.innerHeight - visibilityMargin >= step3.getBoundingClientRect().y &&
-          step3.getBoundingClientRect().y > 0 &&
-          !lock2
-        ) {
-          lock2 = true;
-
-
-          addTitle(dataUkrainianTopic)
-          addText(dataUkrainian)
-          d3.selectAll(".span-words-add")
-            .remove()
-          addSecondTitle(dataRussianTopic)
-          addSecondBlock(dataRussian)
-
-          lockStart = false;
-          lock1 = false;
-          lock3 = false;
-          lock4 = false;
-          lock5 = false;
-        }
-
-        if (
-          window.innerHeight - visibilityMargin >= step4.getBoundingClientRect().y &&
-          step4.getBoundingClientRect().y > 0 &&
-          !lock3
-        ) {
-          lock3 = true;
-
-          addTitle(dataUkrainianMilitaryTopic)
-          addText(dataUkrainianMilitary)
-          d3.selectAll(".span-words-add")
-            .remove()
-          addSecondTitle(dataRussianMilitaryTopic)
-          addSecondBlock(dataRussianMilitary)
+            lockStart = false;
+            lock1 = false;
+            lock2 = false;
+            lock3 = false;
+            lock4 = false;
+            lock5 = false;
+            lock6 = false;
+          }
 
 
 
-          lockStart = false;
-          lock1 = false;
-          lock2 = false;
-          lock4 = false;
-          lock5 = false;
-        }
+
+          if (
+            window.innerHeight - visibilityMargin >= step1.getBoundingClientRect().y &&
+            step1.getBoundingClientRect().y > 0 &&
+            !lockStart
+          ) {
+
+            addTitle(dataSpecialTopic, '.wordsTitle')
+            addText(dataSpecial, '.wordsDesktop')
+            d3.selectAll(".span-words-add")
+              .remove()
+            addSecondTitle(dataWarTopic, '.wordsTitleAdd')
+            addSecondBlock(dataWar, '.wordsAdd')
+
+            lockStart = true;
+            lock1 = false;
+            lock2 = false;
+            lock3 = false;
+            lock4 = false;
+            lock5 = false;
+          }
+
+          if (
+            window.innerHeight - visibilityMargin >= step2.getBoundingClientRect().y &&
+            step2.getBoundingClientRect().y > 0 &&
+            !lock1
+          ) {
+            lock1 = true;
 
 
-        if (
-          window.innerHeight - visibilityMargin >= step5.getBoundingClientRect().y &&
-          step5.getBoundingClientRect().y > 0 &&
-          !lock4
-        ) {
-          lock4 = true;
 
-          addTitle(dataRefugeesTopic)
-          addText(dataRefugees)
-          d3.selectAll(".span-words-add")
-            .remove()
-
-          lockStart = false;
-          lock1 = false;
-          lock2 = false;
-          lock3 = false;
-          lock5 = false;
-          lock6 = false;
-        }
+            addTitle(dataUkraineTopic, '.words')
+            addText(dataUkraine, '.wordsDesktop')
+            d3.selectAll(".span-words-add")
+              .remove()
+            addSecondTitle(dataRussiaTopic, '.wordsTitleAdd')
+            addSecondBlock(dataRussia, '.wordsAdd')
 
 
-        if (
-          window.innerHeight - visibilityMargin >= step6.getBoundingClientRect().y &&
-          step6.getBoundingClientRect().y > 0 &&
-          !lock5
-        ) {
-          lock5 = true;
+            lockStart = false;
+            lock2 = false;
+            lock3 = false;
+            lock4 = false;
+            lock5 = false;
+          }
+          if (
+            window.innerHeight - visibilityMargin >= step3.getBoundingClientRect().y &&
+            step3.getBoundingClientRect().y > 0 &&
+            !lock2
+          ) {
+            lock2 = true;
 
-          addTitle(dataCourageTopic)
-          addText(dataCourage)
-          d3.selectAll(".span-words-add")
-            .remove()
+
+            addTitle(dataUkrainianTopic, '.words')
+            addText(dataUkrainian, '.wordsDesktop')
+            d3.selectAll(".span-words-add")
+              .remove()
+            addSecondTitle(dataRussianTopic, '.wordsTitleAdd')
+            addSecondBlock(dataRussian, '.wordsAdd')
+
+            lockStart = false;
+            lock1 = false;
+            lock3 = false;
+            lock4 = false;
+            lock5 = false;
+          }
+
+          if (
+            window.innerHeight - visibilityMargin >= step4.getBoundingClientRect().y &&
+            step4.getBoundingClientRect().y > 0 &&
+            !lock3
+          ) {
+            lock3 = true;
+
+            addTitle(dataUkrainianMilitaryTopic, '.words')
+            addText(dataUkrainianMilitary, '.wordsDesktop')
+            d3.selectAll(".span-words-add")
+              .remove()
+            addSecondTitle(dataRussianMilitaryTopic, '.wordsTitleAdd')
+            addSecondBlock(dataRussianMilitary, '.wordsAdd')
 
 
-          lockStart = false;
-          lock1 = false;
-          lock2 = false;
-          lock3 = false;
-          lock4 = false;
-          lock6 = false;
-        }
-      });
 
+            lockStart = false;
+            lock1 = false;
+            lock2 = false;
+            lock4 = false;
+            lock5 = false;
+          }
+
+
+          if (
+            window.innerHeight - visibilityMargin >= step5.getBoundingClientRect().y &&
+            step5.getBoundingClientRect().y > 0 &&
+            !lock4
+          ) {
+            lock4 = true;
+
+            addTitle(dataRefugeesTopic, '.words')
+            addText(dataRefugees, '.wordsDesktop')
+            d3.selectAll(".span-words-add")
+              .remove()
+          
+
+            lockStart = false;
+            lock1 = false;
+            lock2 = false;
+            lock3 = false;
+            lock5 = false;
+            lock6 = false;
+          }
+
+
+          if (
+            window.innerHeight - visibilityMargin >= step6.getBoundingClientRect().y &&
+            step6.getBoundingClientRect().y > 0 &&
+            !lock5
+          ) {
+            lock5 = true;
+
+            addTitle(dataCourageTopic, '.words')
+            addText(dataCourage, '.wordsDesktop')
+            d3.selectAll(".span-words-add")
+              .remove()
+
+
+            lockStart = false;
+            lock1 = false;
+            lock2 = false;
+            lock3 = false;
+            lock4 = false;
+            lock6 = false;
+          }
+        });
+      }
     })
   </script>
 </body>

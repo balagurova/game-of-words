@@ -1,5 +1,10 @@
-var txt = `Russia Russian Ukraine military Ukrainian Donbass special operation Putin Mariupol president protection residents sanctions negotiation Kyiv USA time support humanitarian nationalists help countries weapon republic Moscow strength blows government Donetsk situation UN measures thousand programs refugees security forces Lavrov sides troops Luhansk Human foreign showed territory Western Crimea minister courage security Donetsk declared show channel control regions authorities heroism informed conditions children defense objects Belarus Germany citizens economy media anti-Russian`;
+var txt = `Russia Russian Ukraine military Ukrainian Donbass special operation Putin Mariupol president protection residents sanctions negotiation Kyiv USA time support humanitarian nationalists help countries weapon republic Moscow strength blows government Donetsk situation UN measures thousand programs refugees security forces Lavrov sides troops Luhansk Human foreign showed territory Western Crimea minister courage security Donetsk declared show channel control regions authorities heroism informed conditions children defense objects Belarus citizens economy media anti-Russian`.toUpperCase();
 txt = txt.split(' ')
+var font;
+let box;
+function preload(){
+  font = 'input-mono'
+}
 
 
 
@@ -22,7 +27,7 @@ async function setup() {
   createCanvas(window.innerWidth, innerHeight).parent('#background')
   resetSketch();
   
-  var introductionHeight, closureHeight;
+  var introductionHeight, finalSection;
   
     
 }
@@ -31,12 +36,12 @@ function draw() {
   clear()
   // background(0)
   // translate(200,150)
-  textStyle(BOLD);
+  textFont(font);
   boxes.forEach(box => {
     // Getting vertices of each object
     var vertices = box.vertices;
-    stroke(255);
-    strokeWeight(2);
+ 
+   
     noFill();
     push();
     translate(box.position.x, box.position.y);
@@ -53,14 +58,18 @@ function draw() {
     }
     rotate(box.angle);
     textAlign(CENTER);
-    text(box.word, 0, 10);
-    pop();
-    if (box.tag == "vb") {
-      Body.setVelocity(box, {
-        x: box.velocity.x,
-        y: box.velocity.y
-      });
+
+
+    if(window.innerWidth >= 600){
+      text(box.word, 0, 9);
     }
+    else{
+      text(box.word, 0, 6);
+    }
+
+
+    
+    pop();
   });
   // ellipse(mouseX, mouseY, 5, 5);
   if (mouseIsPressed) {
@@ -80,21 +89,30 @@ function draw() {
     }
   }
   introductionHeight = document.getElementById('introduction').getBoundingClientRect().y
-  closureHeight = document.getElementById('closure').getBoundingClientRect().y
+  finalSection = document.getElementById('finalSection').getBoundingClientRect().y
 
-
-  if (introductionHeight < 0) {
+  
+  if (window.innerWidth >600 && introductionHeight < -800) {
     document.getElementById("background").style.opacity = 0
-    document.getElementById("background").style.transition = 'opacity 500ms'
+    document.getElementById("background").style.transition = 'opacity 200ms'
+  }
+  else if (window.innerWidth < 600 && introductionHeight < -300) {
+    document.getElementById("background").style.opacity = 0
+    document.getElementById("background").style.transition = 'opacity 200ms'
   }
   else{
     document.getElementById("background").style.opacity = 1
-    document.getElementById("background").style.transition = 'opacity 500ms'
+    document.getElementById("background").style.transition = 'opacity 200ms'
   }
 
-if(window.height > closureHeight + 700) {
+if(window.innerWidth > 600 && window.height > finalSection + 700) {
     document.getElementById("background").style.opacity = 1
-    document.getElementById("background").style.transition = 'opacity 500ms'
+    document.getElementById("background").style.transition = 'opacity 200ms'
+  }
+
+  else if(window.innerWidth < 600 && window.height > finalSection + 300) {
+    document.getElementById("background").style.opacity = 1
+    document.getElementById("background").style.transition = 'opacity 200ms'
   }
 
 
@@ -127,6 +145,7 @@ function inside(point, vs) {
 }
 
 
+
 function resetSketch(){
   frameRate(25)
   // Create an engine
@@ -145,27 +164,39 @@ function resetSketch(){
     isStatic: true
   })
 
+
   let xx = 0;
-  textSize(40);
+  if(window.innerWidth >= 600){
+    textSize(22);
+  }
+  else{
+    textSize(18);
+  }
+
   for (var i = 0; i < txt.length; i++) {
 
     // Start drawing
     push();
     let useWord = txt[i];
-    // Use random color for each word, because jieba.js didn't contain pos.
-    let item = ["noun", "adj", "vb", "other"];
-    let tag = item[Math.floor(Math.random() * item.length)];
     let useColor = "white";
-    let box = Bodies.rectangle(xx + 100, (5 * int(i / 10)) - 100, textWidth(useWord) + 16, 40);
+    if(window.innerWidth >= 600){
+      box = Bodies.rectangle(xx + 100, (5 * int(i / 10)) - 100, textWidth(useWord) + 12, 30);
+    }
+    else{
+      box = Bodies.rectangle(xx + 100, (5 * int(i / 10)) - 100, textWidth(useWord) + 8, 20);
+    }
+
+    
+    
     box.word = useWord;
     box.color = useColor;
-    box.tag = tag;
     Body.setVelocity(box, {
       x: 0,
-      y: -20
+      y: -40
     });
     boxes.push(box);
     fill(useColor);
+
     text(useWord, xx, 45 * int(i / 10));
     // Stop drawing
     pop();
@@ -177,5 +208,6 @@ function resetSketch(){
   // add all of the bodies to the world
   World.add(engine.world, boxes);
   World.add(engine.world, [ground, wallLeft, wallRight]);
+
   Engine.run(engine);
 }
