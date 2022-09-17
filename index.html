@@ -19,12 +19,12 @@
 </head>
 
 <body>
-  <div id="background"></div>
   <div id="introduction">
+    <div id="background"></div>
     <div class="titleBlock">
       <h3 class="lead">A VISUAL ESSAY ABOUT INFORMATION MANIPULATION IN THE RUSSIAN MEDIA</h3>
       <h1>Game of words</h1>
-      <h3 class="lead">IDEA, DESIGN AND CODING BY ANASTASIIA BALAGUROVA</h3>
+      <h3 class="lead">IDEA, DESIGN AND CODE BY ANASTASIIA BALAGUROVA</h3>
     </div>
   </div>
 
@@ -190,13 +190,13 @@
     d3.tsv("./data/keywords-d3-eng.tsv").then(function (datum) {
       function showKeywords(data, data2) {
         keysArea
-          .selectAll(".wordsTitle")
+          .selectAll(".keyWords")
           .data(data)
           .join("span")
           .html(function (d) {
             return d.term + " [" + d.count + "]"
           })
-          .classed("wordsTitle", true)
+          .classed("keyWords", true)
 
         keysArea
           .append("div")
@@ -205,13 +205,13 @@
           .classed("show-more", true)
           .on('click', function (d) {
             keysArea
-              .selectAll(".wordsTitle")
+              .selectAll(".keyWords")
               .data(data2)
               .join()
               .html(function (d) {
                 return d.term + " [" + d.count + "]"
               })
-              .classed("wordsTitle", true)
+              .classed("keyWords", true)
 
             keysArea
               .selectAll(".show-more")
@@ -353,13 +353,24 @@
             })
       }
 
+
       function addSecondTitle(data, selector) {
         d3.select(selector)
-        .append('div')
-          .html(function (d) {
-            return data
-          })
-          .classed("wordsTitle", true)
+        .selectAll('wordsTitle')
+        .data(data[0])
+        .join(function (enter) {
+              enter.append("div")
+                .html(function (d) {
+                  return data
+                })
+                .classed("wordsTitle", true)
+
+            },
+            function (update) {
+              update.html(function (d) {
+                return data
+              })
+            })
       }
 
       function addText(data, selector) {
@@ -477,6 +488,8 @@
           .classed(className, true)
       }
 
+
+
       var lockStart = false,
         lock1 = false,
         lock2 = false,
@@ -498,11 +511,13 @@
       addDiv('.words','wordsAdd')
 
       addTitle(dataSpecialTopic, '.words')
-      addText(dataSpecial, '.wordsDesktop')
-      addTitle(dataSpecialTopic, '.words1')
+      // addText(dataSpecial, '.wordsDesktop')
+      // addTitle(dataSpecialTopic, '.words1')
       addText(dataSpecial, '.wordsDesktop')
 
       var visibilityMargin = window.innerHeight / 3;
+
+
 
       if (window.innerWidth < 600) {
 
@@ -561,9 +576,10 @@
 
             addTitle(dataSpecialTopic, '.words')
             addText(dataSpecial, '.wordsDesktop')
-
             d3.selectAll(".span-words-add")
               .remove()
+            
+
 
             lockStart = false;
             lock1 = false;
@@ -583,7 +599,7 @@
             !lockStart
           ) {
 
-            addTitle(dataSpecialTopic, '.wordsTitle')
+            addTitle(dataSpecialTopic, '.words')
             addText(dataSpecial, '.wordsDesktop')
             d3.selectAll(".span-words-add")
               .remove()

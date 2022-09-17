@@ -91,8 +91,9 @@ function draw() {
   introductionHeight = document.getElementById('introduction').getBoundingClientRect().y
   finalSection = document.getElementById('finalSection').getBoundingClientRect().y
 
+
   
-  if (window.innerWidth >600 && introductionHeight < -800) {
+  if (window.innerWidth >600 && introductionHeight < -50) {
     document.getElementById("background").style.opacity = 0
     document.getElementById("background").style.transition = 'opacity 200ms'
   }
