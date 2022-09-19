@@ -13,12 +13,9 @@ var Engine = Matter.Engine;
 var Render = Matter.Render;
 var World = Matter.World;
 var Bodies = Matter.Bodies;
-// var Composite = Matter.Composite;
 var Body = Matter.Body;
-// var Events = Matter.Events;
 var engine;
 var boxes = [];
-// var Constraint = Matter.Constraint;
 var ground, wallLeft, wallRight;
 var introductionHeight;
 
@@ -26,25 +23,28 @@ async function setup() {
   
   createCanvas(window.innerWidth, innerHeight).parent('#background')
   resetSketch();
-  
-  var introductionHeight, finalSection;
-  
-    
 }
 
+var randomNmbr = Math.floor(Math.random() * 30);
+
+
 function draw() {
+  let flag = false;
   clear()
-  // background(0)
-  // translate(200,150)
   textFont(font);
   boxes.forEach(box => {
     // Getting vertices of each object
+    // if (!flag) {
+    //   console.log( JSON.stringify(box.position));
+    //   flag = true;
+    // }
     var vertices = box.vertices;
- 
-   
     noFill();
     push();
+
     translate(box.position.x, box.position.y);
+    // let n = noise(360);
+    // rotate(n);
     beginShape();
     for (var i = 0; i < vertices.length; i++) {
       vertex(vertices[i].x - box.position.x, vertices[i].y - box.position.y);
@@ -66,9 +66,6 @@ function draw() {
     else{
       text(box.word, 0, 6);
     }
-
-
-    
     pop();
   });
   // ellipse(mouseX, mouseY, 5, 5);
@@ -91,30 +88,46 @@ function draw() {
   introductionHeight = document.getElementById('introduction').getBoundingClientRect().y
   finalSection = document.getElementById('finalSection').getBoundingClientRect().y
 
+  function inView(id) {
+    var visibilityMargin = window.innerHeight / 3;
+    var object = document.getElementById(id);
+    if (!object)
+      return false;
+    var y = object.getBoundingClientRect().y
+    return window.innerHeight - visibilityMargin >= y && y > 0;
+  }
+
+  if(inView('intro')){
+    World.remove(engine.world, [ground, wallLeft, wallRight]);
+  }
+
+  if(inView('keywords')){
+    World.clear(world);
+    Engine.clear(engine);
+    Render.stop(render);
+    Runner.stop(runner);
+    render.canvas.remove();
+    render.canvas = null;
+    render.context = null;
+  }
 
   
-  if (window.innerWidth >600 && introductionHeight < -50) {
-    document.getElementById("background").style.opacity = 0
-    document.getElementById("background").style.transition = 'opacity 200ms'
-  }
-  else if (window.innerWidth < 600 && introductionHeight < -300) {
-    document.getElementById("background").style.opacity = 0
-    document.getElementById("background").style.transition = 'opacity 200ms'
-  }
-  else{
-    document.getElementById("background").style.opacity = 1
-    document.getElementById("background").style.transition = 'opacity 200ms'
+
+
+  if(inView('finalSection')){
+    World.add(engine.world, boxes);
+    World.add(engine.world, [ground, wallLeft, wallRight]);
   }
 
-if(window.innerWidth > 600 && window.height > finalSection + 700) {
-    document.getElementById("background").style.opacity = 1
-    document.getElementById("background").style.transition = 'opacity 200ms'
-  }
+  // if(window.innerWidth > 600 && window.height > finalSection + 700) {
+  //     document.getElementById("background").style.opacity = 1
+  //     document.getElementById("background").style.transition = 'opacity 200ms'
+  //   }
 
-  else if(window.innerWidth < 600 && window.height > finalSection + 300) {
-    document.getElementById("background").style.opacity = 1
-    document.getElementById("background").style.transition = 'opacity 200ms'
-  }
+  //   else if(window.innerWidth < 600 && window.height > finalSection + 300) {
+  //     document.getElementById("background").style.opacity = 1
+  //     document.getElementById("background").style.transition = 'opacity 200ms'
+  //   }
 
 
   
@@ -148,7 +161,7 @@ function inside(point, vs) {
 
 
 function resetSketch(){
-  frameRate(25)
+  // frameRate(25)
   // Create an engine
   engine = Engine.create();
   ground = Bodies.rectangle(
@@ -158,6 +171,7 @@ function resetSketch(){
       },
       isStatic: true
     });
+
   wallLeft = Bodies.rectangle(-80, window.innerHeight, 160, window.innerHeight, {
     isStatic: true
   });
@@ -180,11 +194,12 @@ function resetSketch(){
     push();
     let useWord = txt[i];
     let useColor = "white";
+    let wordWidth = textWidth(useWord);
     if(window.innerWidth >= 600){
-      box = Bodies.rectangle(xx + 100, (5 * int(i / 10)) - 100, textWidth(useWord) + 12, 30);
+      box = Bodies.rectangle(xx + 100, 0, wordWidth + 12, 30);
     }
     else{
-      box = Bodies.rectangle(xx + 100, (5 * int(i / 10)) - 100, textWidth(useWord) + 8, 20);
+      box = Bodies.rectangle(xx + 100, 0, wordWidth + 8, 20);
     }
 
     
@@ -193,15 +208,15 @@ function resetSketch(){
     box.color = useColor;
     Body.setVelocity(box, {
       x: 0,
-      y: -40
+      y: -4
     });
     boxes.push(box);
     fill(useColor);
 
-    text(useWord, xx, 45 * int(i / 10));
+    text(useWord, xx, 0);
     // Stop drawing
     pop();
-    xx += textWidth(useWord) + 10;
+    xx += wordWidth + 10;
     if ((i + 1) % 10 == 0) {
       xx = 0;
     }

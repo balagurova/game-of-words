@@ -132,9 +132,10 @@
   margin-left: auto;
   margin-right: 5rem;
   width: 32rem;
-  line-height: 1.4;
+  line-height: 1.6;
   font-family: HK-Grotesk;
-  font-size: 1rem
+  font-weight: 100;
+  font-size: 1rem;
  }
  
  
@@ -375,7 +376,7 @@
   margin-left: auto;
   margin-right: 5rem;
   width: 32rem;
-  line-height: 1.4;
+  line-height: 1.6;
   font-family: HK-Grotesk;
   font-size: 1.3rem
  }
@@ -384,7 +385,7 @@
   color: #e5e5e5;
   position: relative;
   width: 32rem;
-  line-height: 1.4;
+  line-height: 1.6;
   font-family: HK-Grotesk;
   font-size: 1.3rem
  }
@@ -426,13 +427,31 @@
   justify-content: space-between;
   color: #141414;
   height: 8rem;
-  width: 24rem
- 
+  width: 24rem;
  }
+
  
  .tooltip a {
   color: #141414
  }
+
+ .tooltip a:hover {
+  color: #141414;
+  opacity: 0.6;
+ }
+
+ a, a:visited{
+   color: #e5e5e5;
+   border-bottom: 1px solid #e5e5e581;
+   text-decoration: none;
+ }
+
+ a:hover{
+  color: #e5e5e5;
+  opacity: 0.6;
+  border-bottom: 1px solid #e5e5e581;
+  text-decoration: none;
+}
  
  .tooltip a:visited {
   color: #141414

@@ -8,7 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.14.2/matter.min.js"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="./js/words.js"></script>
+
   <link rel="stylesheet" href="https://use.typekit.net/ktx3ijp.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
@@ -29,22 +29,21 @@
   </div>
 
 
-  <div class="intro">
+  <div class="intro" id="intro">
     <div class="intro-text">
-      <p> In this visual essay, I want to look at how Russian media has been covering events during the war in Ukraine.
-        What are the key messages and what is their context?
+      <p> I am Russian. I know a lot about Russian propaganda machine. I witnessed it from within for many years, and I continue to observe it now from the outside.    
+        Many Russian citizens take Russian media as the only source of truth. It is the only picture they see. The war in Ukraine was no exception.         
       </p>
-      <p>To explore these questions, I have visualized the language used in the headlines of the biggest state media
-        channel in Russia. The dataset contains all the headlines from the beginning of the war with Ukraine, 24 Feb,
-        until 24 Apr 2022.</p>
+      <p>In this visual essay, I want to look at how Russian media has been covering events during the war in Ukraine. What topics are raised most often? What are the highlights? How biased is the narrative?</p>
+        <p>
+        To explore these questions, I have visualised the language used in the headlines of the biggest state media channel in Russia “1st channel”. The dataset contains all the headlines from the beginning of the war with Ukraine, 24 Feb, until 24 Apr 2022.</p>
     </div>
   </div>
 
 
-  <div class="step">
+  <div class="step" id='keywords'>
     <div class="left">
-      <p>The most frequent words used in those headlines are presented on the right. The number in [ square brackets ]
-        is a number of mentions.</p>
+      <p>The most frequent words used in these headlines are presented on the right. The number in square brackets is a number of mentions. It is clear that most news are related to military actions of Russia on the territory of Ukraine, so-called special military operation. You can imagine the scale of propaganda knowing that in Russia it is illegal to call those actions a war.</p>
     </div>
     <div class="keywords"></div>
   </div>
@@ -55,81 +54,53 @@
       <div class='words' width="400" height="800"></div>
     </div>
     <div id="start" class="start par">
-      <p>To gather more insight into those unique words from the list above, let's look at the contextual phrases around
-        some of them.</p>
-      <p> For example, the word <span class='wordsTitle'>special operation [ 419 ]</span> describes the current actions
-        of the Russian military on the territory of Ukraine. Why? Because it is forbidden by Roskomnadzor to call those
-        actions an attack, an invasion, or a declaration of war.</p>
+      <p>Keywords offer only limited view of the Russian narrative. To gather more insight, let's look at the contextual phrases around those words.</p>
+      <p> For example, the mentioned above word <span class='wordsTitle'>special operation [419]</span> is used in a very limited context of “protection” and “peace in Donbass” (region of Eastern Ukraine).</p>
+      <p>Phrases are not ordered by the number of mentions. Duplicate words have been removed from the list. The length of the phrase was chosen by the author to preserve the meaning of the title as best as possible and may vary depending on the content of the title.
+      </p>
       <div class="instructions">[HOVER ON A PHRASE ON THE RIGHT </br> TO SEE THE WHOLE HEADLINE]</div>
       <div class='words1 mob' width="400" height="800"></div>
     </div>
 
 
     <div id="step1" class="par">
-      <p>Unsurprisingly, the word <span class='wordsTitle'>war [ 32 ]</span> was used quite rarely. These mentions refer
-        to the diplomatic, hybrid, or other kinds of wars waged by the 'collective West' against Russia.</p>
-      <p>The substitution of the word 'war' with the phrase ‘special operation’ can be called Euphemism. This
-        information manipulation selects words to pacify the audience by making an unpleasant reality more tolerable.
-      </p>
-      <p class="note">Rhetorical Techniques mentioned in this essay are classified by the Institute for Propaganda
-        Analysis (IPA) which was a U.S.-based organization operating from 1937 to 1942.</p>
+      <p>Unsurprisingly, the word <span class='wordsTitle'>war [32]</span> was used quite rarely. These mentions refer to the diplomatic, hybrid, or other kinds of wars waged by the “collective West” against Russia.</p>
+      <p>The substitution of the word <span class='wordsTitle'>war</span>with the phrase <span class='wordsTitle'>special operation</span> can be called Euphemism. This information manipulation selects words to pacify the audience by making an unpleasant reality more tolerable.</p>
+      <p class="note">Rhetorical Techniques mentioned in this essay are classified by the Institute for Propaganda Analysis (IPA) which was a U.S.-based organization operating from 1937 to 1942.</p>
       <div class='words2 mob' width="400" height="800"></div>
     </div>
 
 
     <div id="step2" class="par">
-      <p>Among the most frequent words are <span class='wordsTitle'>Russia [ 1206 ]</span> and <span
-          class='wordsTitle'>Ukraine [ 816 ]</span>. There are many contextual phrases, so here are only first 20
-        phrases for each keyword. Ukraine is associated with negative notions of destruction and hostility — 'refuse',
-        'disrupt', 'planned an attack', whereas most phrases related to Russia are neutral or positive – 'ready to
-        declare', 'is a land of opportunity' etc. The contrast between those phrases can be an example of another
-        rhetorical device called Transfer. It is when the speaker deliberately associates the opponent with something
-        very negative, and themselves with universally good things.</p>
+      <p>Among the most frequent words are <span class='wordsTitle'>Russia [1206]</span> and <span class='wordsTitle'>Ukraine [816]</span>. There are many contextual phrases, so here are only first 20 phrases for each keyword. Ukraine is associated with negative notions of destruction and hostility — “refuse”, “disrupt”, “planned an attack”, whereas most phrases related to Russia are neutral or positive – “ready to declare”, “is a land of opportunity” etc. The contrast between those phrases can be an example of another rhetorical device called Transfer. It is when the speaker deliberately associates the opponent with something very negative, and themselves with universally good things.</p>
       <div class='words3 mob' width="400" height="800"></div>
     </div>
 
 
     <div id="step3" class="par">
-      <p>The adjectives <span class='wordsTitle'>Ukrainian [ 533 ]</span> and <span class='wordsTitle'>Russian [ 922
-          ]</span> can reveal which entities correspond to Russia or Ukraine. Among nouns related to the world
-        'Ukrainian', there are many loaded words such as 'radicals', 'nazis', and 'fakes'. There are no such words
-        related to the word 'Russian'.
+      <p>The adjectives <span class='wordsTitle'>Ukrainian [533]</span> and <span class='wordsTitle'>Russian [922]</span> can reveal which entities correspond to Russia or Ukraine. Among nouns related to the word “Ukrainian”, there are many loaded words such as “radicals”, “nazis”, and “fakes”. There are no such words related to the word “Russian”.
       </p>
-      <p>This is an example of the Name-calling technique which implies the use of offensive names to induce rejection
-        or condemnation without objective consideration of the facts.
-      </p>
+      <p>This is an example of the Name-calling technique which implies the use of offensive names to induce rejection or condemnation without objective consideration of the facts.</p>
       <div class='words4 mob' width="400" height="800"></div>
     </div>
 
 
     <div id="step4" class="par">
-      <p>Here we have <span class='wordsTitle'>Russian military [ 308 ]</span> and <span class='wordsTitle'>Ukrainian
-          military [ 79 ]</span>. The Transfer technique, as well as Name-calling, are presented here as in the previous
-        examples.</p>
-      <p>In addition, there is one more device that can be noticed here. It is called Appeal to Emotion. Such phrases as
-        'save the life of wounded officer' or 'demined the territory of the kindergarten' can be very appealing to the
-        audience even though they do not represent the whole picture.</p>
+      <p>Here we have <span class='wordsTitle'>Russian military [308]</span> and <span class='wordsTitle'>Ukrainian military [79]</span>. The Transfer technique, as well as Name-calling, are presented here as in the previous examples.</p>
+      <p>In addition, there is one more device that can be noticed here. It is called Appeal to Emotion. Such phrases as “save the life of wounded officer” or “demined the territory of the kindergarten” can be very appealing to the audience even though they do not represent the whole picture.</p>
       <div class='words5 mob' width="400" height="800"></div>
     </div>
 
 
     <div id="step5" class="par">
-      <p>Speaking of <span class='wordsTitle'>refugees [ 101 ]</span>, there is not a single mention of the presence of
-        Ukrainian refugees in Europe. All the refugees mentioned in the headlines come and settle in Russia. But
-        according to the UN, on 5 May 2022, there were 5.7 mln Ukrainian refugees in total, 0.7 mln of which are in
-        Russia.</p>
-      <p>When the media use only those facts and details that support their argument, such device is called Card
-        Stacking or Cherry-Picking.</p>
+      <p>Speaking of <span class='wordsTitle'>refugees [101]</span>, there is not a single mention of the presence of Ukrainian refugees in Europe. All the refugees mentioned in the headlines come and settle in Russia. But according to the UN, on 5 May 2022, there were 5.7 million Ukrainian refugees in total, 0.7 million of which are in Russia.</p>
+      <p>When the media use only those facts and details that support their argument, such device is called Card Stacking or Cherry-Picking.</p>
       <div class='words6 mob' width="400" height="800"></div>
     </div>
 
-
     <div id="step6" class="par last-par">
-      <p>The last example is <span class='wordsTitle'>COURAGE [ 67 ]</span>. This word is often used in conjunction with
-        such words as heroism, professionalism, fortitude. Another observation about this word is that it is always used
-        in the context of the Russian military. </p>
-      <p>This pattern can refer to the Glittering generality. It is a vague word or phrase that evokes positive feelings
-        rather than conveys information.</p>
+      <p>The last example is <span class='wordsTitle'>COURAGE [67]</span>. This word is often used in conjunction with such words as heroism, professionalism, fortitude. Another observation about this word is that it is always used in the context of the Russian military.</p>
+      <p>This pattern can refer to the Glittering generality. It is a vague word or phrase that evokes positive feelings rather than conveys information.</p>
       <div class='words7 mob' width="400" height="800"></div>
     </div>
   </div>
@@ -145,42 +116,29 @@
     <div class="finalText">
       <div>
         <div class='span-words about'>[ METHOD ]</div>
-        <div> To build the dataset of headlines, I scraped data from the biggest Russian state media '1st channel' from
-          24 Feb 2022 until 24 Apr 2022. As a result, the dataset encompasses 5,468 headlines. For the unique word
-          extraction, I used the Voyant tool. For the contextual analysis, I queried the dataset containing unique words
-          using Python.</div>
+        <div> To build the dataset of headlines, I scraped data from the biggest Russian state media “1st channel” from 24 Feb 2022 until 24 Apr 2022. As a result, the dataset encompasses 5,468 headlines. For the unique word extraction, I used the Voyant tool. For the contextual analysis, I queried the dataset containing unique words using Python.</div>
       </div>
       <div>
         <div class='span-words about'>[ LIMITATIONS ]</div>
-        <div> I acknowledge that being Russian and living most of my life in Russia can both help to work with headlines
-          from Russian media, but also can set biases in terms of my own opinion on this topic. In addition, there may
-          be some inaccuracies due to the automatic translation of the headlines.
+        <div> I acknowledge that being Russian and living most of my life in Russia can both help to work with headlines from Russian media, but also can set biases in terms of my own opinion on this topic. In addition, there may be some inaccuracies due to the automatic translation of the headlines.
         </div>
       </div>
       <div>
         <div class='span-words about'>[ FUTURE WORK ]</div>
-        <div> Further work might be done in different directions. Firstly, a number of media can be expanded. It would
-          be interesting to compare other media from Russia as well as media from other countries. Secondly, it is
-          important to see how the wording has changed (or not) over a long period. More structured contextual analysis
-          of headlines or texts can reveal more manipulative patterns used.
+        <div> Further work might be done in different directions. Firstly, a number of media can be expanded. It would be interesting to compare other media from Russia as well as media from other countries. Secondly, it is important to see how the wording has changed (or not) over a long period. More structured contextual analysis of headlines or texts can reveal more manipulative patterns used.
         </div>
       </div>
       <div>
         <div class='span-words about'>[ SOURCES ]</div>
-        <div>· James Combs and Dan Nimmo (1993) The New Propaganda: The Dictatorship of Palaver in Contemporary
-          Politics.
-          New York: Longman
+        <div style="margin-bottom: 0.5rem">· <a href="https://www.worldcat.org/title/37238860">Cole, Robert, ed. (1998). Encyclopedia of Propaganda. Armonk, NY: Sharpe Reference. ISBN 9780765680099. OCLC 37238860</a>
         </div>
-        <div>· Ecker, U. K. H., Lewandowsky, S., Chang, E. P., & Pillai, R. (2014). The effects of subtle misinformation
-          in
-          news headlines. Journal of Experimental Psychology: Applied, 20(4), 323–335.
-          https://doi.org/10.1037/xap0000028
+        <div>· <a href="https://psycnet.apa.org/doiLanding?doi=10.1037/xap0000028">Ecker, U. K. H., Lewandowsky, S., Chang, E. P., & Pillai, R. (2014). The effects of subtle misinformation in news headlines. Journal of Experimental Psychology: Applied, 20(4), 323–335</a>
         </div>
       </div>
     </div>
   </div>
 
-
+  <script src="./js/words.js"></script>
   <script>
     let random;
     let titleCard = d3.select(".randomTitles");
@@ -385,15 +343,22 @@
                 .classed("span-words", true)
                 .on("mouseover", function (e, d) {
                   tooltipDiv
-                    .style("opacity", 1)
-                    .html('<div class="tooltipTitle">' + d.title + '</div>' +
+                  .html('<div class="tooltipTitle">' + d.title + '</div>' +
                       '<div class = "tooltipDate"><a href="' + d.link + '"> Link →</a>' +
                       '<div class="tooltipDate">' + d.date + '</div></div>')
+                    //   .style("left", parseInt(d3.select(this).attr("cx"))-40 + "px")
+                    // .style("top", d3.select(this).attr("cy") + "px")
+                      .style("left", (e.pageX - 35) + "px")
+                    .style("top", (e.pageY + 4) + "px")
+                  .transition()
+                    .duration(500)
+                    .style("opacity", 1)
+                    
 
 
 
-                    .style("left", (e.pageX - 35) + "px")
-                    .style("top", (e.pageY + 8) + "px")
+
+                 
 
                 })
                 .on("mouseout", function (e, d) {
@@ -518,6 +483,14 @@
       var visibilityMargin = window.innerHeight / 3;
 
 
+      function inView(id) {
+  var object = document.getElementById(id);
+  if (!object)
+    return false;
+  var y = object.getBoundingClientRect().y
+  return window.innerHeight - visibilityMargin >= y && y > 0;
+}
+
 
       if (window.innerWidth < 600) {
 
@@ -571,9 +544,9 @@
       if (window.innerWidth > 600) {
         document.addEventListener("scroll", () => {
 
-          if (window.innerHeight - visibilityMargin >= start.getBoundingClientRect().y &&
-            start.getBoundingClientRect().y > 0) {
-
+          // if (window.innerHeight - visibilityMargin >= start.getBoundingClientRect().y &&
+          //   start.getBoundingClientRect().y > 0) {
+            if(inView('start')){
             addTitle(dataSpecialTopic, '.words')
             addText(dataSpecial, '.wordsDesktop')
             d3.selectAll(".span-words-add")
@@ -593,11 +566,7 @@
 
 
 
-          if (
-            window.innerHeight - visibilityMargin >= step1.getBoundingClientRect().y &&
-            step1.getBoundingClientRect().y > 0 &&
-            !lockStart
-          ) {
+          if(inView('step1')&& !lockStart){
 
             addTitle(dataSpecialTopic, '.words')
             addText(dataSpecial, '.wordsDesktop')
@@ -614,11 +583,7 @@
             lock5 = false;
           }
 
-          if (
-            window.innerHeight - visibilityMargin >= step2.getBoundingClientRect().y &&
-            step2.getBoundingClientRect().y > 0 &&
-            !lock1
-          ) {
+          if(inView('step2')&& !lock1){
             lock1 = true;
 
 
@@ -637,11 +602,7 @@
             lock4 = false;
             lock5 = false;
           }
-          if (
-            window.innerHeight - visibilityMargin >= step3.getBoundingClientRect().y &&
-            step3.getBoundingClientRect().y > 0 &&
-            !lock2
-          ) {
+          if(inView('step3')&& !lock2){
             lock2 = true;
 
 
@@ -659,11 +620,7 @@
             lock5 = false;
           }
 
-          if (
-            window.innerHeight - visibilityMargin >= step4.getBoundingClientRect().y &&
-            step4.getBoundingClientRect().y > 0 &&
-            !lock3
-          ) {
+          if(inView('step4')&& !lock3){
             lock3 = true;
 
             addTitle(dataUkrainianMilitaryTopic, '.words')
@@ -683,11 +640,7 @@
           }
 
 
-          if (
-            window.innerHeight - visibilityMargin >= step5.getBoundingClientRect().y &&
-            step5.getBoundingClientRect().y > 0 &&
-            !lock4
-          ) {
+          if(inView('step5')&& !lock4){
             lock4 = true;
 
             addTitle(dataRefugeesTopic, '.words')
@@ -705,11 +658,7 @@
           }
 
 
-          if (
-            window.innerHeight - visibilityMargin >= step6.getBoundingClientRect().y &&
-            step6.getBoundingClientRect().y > 0 &&
-            !lock5
-          ) {
+          if(inView('step6')&& !lock5){
             lock5 = true;
 
             addTitle(dataCourageTopic, '.words')
